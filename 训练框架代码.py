@@ -9,7 +9,7 @@ def train_ch3(net, train_iter, test_iter, loss, num_epochs, updater):
 
     for epoch in range(num_epochs):
         net.train()
-        metric = Accumulator(3)  # 训练损失总和，正确预测数，总样本数
+        metric = d2l.Accumulator(3)  # 训练损失总和，正确预测数，总样本数
         for X, y in train_iter:
             y_hat = net(X)
             l = loss(y_hat, y)
